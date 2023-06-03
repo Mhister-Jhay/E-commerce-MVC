@@ -190,9 +190,9 @@
                             </label>
                         </td>
                         <td>
-                            <label for="productCategory"></label>
+                            <label for="productCategory">Product Category</label>
                             <select th:field="*{productCategory}" name="productCategory" id="productCategory">
-                                <option th:each="category : ${T(com.task.enums.ProductCategory).values()}"
+                                <option th:each="category : ${T(org.jhay.enums.ProductCategory).values()}"
                                         th:value="${category}" th:text="${category.name()}"></option>
                             </select>
                         </td>
