@@ -106,7 +106,7 @@ public class CartServiceImpl implements CartService {
                 .customer(customer)
                 .currency("NGN")
                 .amount(String.valueOf(amount))
-                .redirect_url("http://localhost:8080/redirect-transaction")
+                .redirect_url("https://jhay-commerce.azurewebsites.net/redirect-transaction")
                 .build();
         return paymentServiceImpl.makePayment(payment);
     }
