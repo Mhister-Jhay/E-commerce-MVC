@@ -100,11 +100,12 @@ public class CartServiceImpl implements CartService {
                 .email(user.getEmail())
                 .build();
         double total = getCartTotal(user.getId());
+        double amount = total + (total * 0.01);
         Payment payment = Payment.builder()
                 .tx_ref(UUID.randomUUID().toString())
                 .customer(customer)
                 .currency("NGN")
-                .amount(String.valueOf(total))
+                .amount(String.valueOf(amount))
                 .redirect_url("http://localhost:8080/redirect-transaction")
                 .build();
         return paymentServiceImpl.makePayment(payment);
